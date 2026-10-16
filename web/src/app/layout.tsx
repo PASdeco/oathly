@@ -28,6 +28,9 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://gen-oathly.vercel.app"
+  ),
   title: "Oathly — Say it. Stake it. Keep it.",
   description:
     "Put money behind a public goal. Prove you did it and you get it back. Miss, and it goes to someone you chose. Prototype on GenLayer StudioNet.",

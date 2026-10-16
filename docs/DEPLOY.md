@@ -18,6 +18,7 @@ node web/scripts/deploy-oathly.mjs   # needs BACKEND_PRIVATE_KEY in oathly/.env 
 
 Network: chain 61999, RPC https://studio.genlayer.com/api, explorer https://explorer-studio.genlayer.com. Fund the deployer via the Studio faucet.
 
-## Frontend → Vercel
+## Frontend → Vercel (LIVE)
 
-Root: `oathly/web`. Env: `NEXT_PUBLIC_CHAIN_ID`, `NEXT_PUBLIC_GENLAYER_RPC`, `NEXT_PUBLIC_CONTRACT_ADDRESS`, `NEXT_PUBLIC_EXPLORER_URL`, `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_MOCK_MODE`.
+- URL: https://gen-oathly.vercel.app (project `gen-oathly`, root `web/`, framework Next.js)
+- Env (production): `NEXT_PUBLIC_CHAIN_ID=61999`, `NEXT_PUBLIC_GENLAYER_RPC`, `NEXT_PUBLIC_CONTRACT_ADDRESS=0xA85005663e9368791Bc3Bdaf311138Eb4558C565`, `NEXT_PUBLIC_EXPLORER_URL`, `NEXT_PUBLIC_SITE_URL=https://gen-oathly.vercel.app`, `NEXT_PUBLIC_MOCK_MODE=false`
