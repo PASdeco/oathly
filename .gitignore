@@ -5,3 +5,9 @@ artifacts/
 __pycache__/
 .env
 web/.env.local
+
+# Local-only reference assets (working copies live in web/public/brand/)
+logo-light.png
+logo-on-cobalt.png
+BLUEPRINT.md
+design-reference.html
