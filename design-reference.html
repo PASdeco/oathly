@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Oathly</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;700;800&family=DM+Mono:wght@400;500&display=swap">
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}a:hover{opacity:.7}
+button{font-family:inherit;cursor:pointer}
+input::placeholder{color:#8E93C9}
+</style>
+</helmet>
+<div style="font-family:'Figtree',sans-serif;background:#F5F6FF;color:#0F1235;line-height:1.5">
+
+<div style="background:#2B3BFF;color:#fff">
+<header style="max-width:1200px;margin:0 auto;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+<div style="display:flex;align-items:center;gap:10px;font-family:'Young Serif',serif;font-size:28px"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13" fill="none" stroke="#fff" stroke-width="3"/><path d="M9 15.5 L13.5 20 L21.5 10.5" fill="none" stroke="{{accent}}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Oathly</div>
+<nav style="display:flex;gap:26px;align-items:center;font-weight:700;font-size:15px;flex-wrap:wrap"><a href="#how">How it works</a><a href="#wall">Oath wall</a><a href="#faq">FAQ</a>
+<button style="background:{{accent}};color:#0F1235;border:0;border-radius:999px;padding:12px 22px;font-weight:800;font-size:15px;min-height:44px">Connect wallet</button></nav>
+</header>
+
+<section style="max-width:1200px;margin:0 auto;padding:56px 24px 96px">
+<div style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:{{accent}};margin-bottom:20px">Commitment contracts</div>
+<h1 style="font-family:'Young Serif',serif;font-weight:400;font-size:clamp(50px,8.5vw,112px);line-height:.98;margin:0 0 28px;letter-spacing:-.02em;max-width:900px">Say it. Stake it. Keep it.</h1>
+<p style="font-size:20px;max-width:560px;margin:0 0 48px;color:#DCE0FF">Put money behind a public goal. Prove you did it and you get it back. Miss, and it goes to someone you chose.</p>
+
+<div style="background:#fff;color:#0F1235;border-radius:28px;padding:clamp(24px,4vw,48px);max-width:1000px">
+<div style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.12em;color:#5A5F96;margin-bottom:18px">YOUR OATH</div>
+<p style="font-family:'Young Serif',serif;font-size:clamp(24px,3.4vw,38px);line-height:1.7;margin:0">
+I will <input aria-label="Goal" placeholder="[GOAL]" style="width:210px;max-width:100%;font:inherit;color:#2B3BFF;border:0;border-bottom:3px dashed #2B3BFF;background:#EEF0FF;padding:0 8px;border-radius:6px">
+by <input aria-label="Deadline" placeholder="[DATE]" style="width:150px;max-width:100%;font:inherit;color:#2B3BFF;border:0;border-bottom:3px dashed #2B3BFF;background:#EEF0FF;padding:0 8px;border-radius:6px">.
+If I don't, <input aria-label="Stake amount" placeholder="[AMOUNT]" style="width:150px;max-width:100%;font:inherit;color:#2B3BFF;border:0;border-bottom:3px dashed #2B3BFF;background:#EEF0FF;padding:0 8px;border-radius:6px">
+goes to <input aria-label="Recipient" placeholder="[RECIPIENT]" style="width:210px;max-width:100%;font:inherit;color:#2B3BFF;border:0;border-bottom:3px dashed #2B3BFF;background:#EEF0FF;padding:0 8px;border-radius:6px">.</p>
+<div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:32px">
+<button style="background:#2B3BFF;color:#fff;border:0;border-radius:999px;padding:16px 34px;font-size:17px;font-weight:800;min-height:52px">Seal my oath</button>
+<span style="font-size:14px;color:#4B5080">Validators check your public proof. No proof, no refund.</span>
+</div></div>
+</section>
+</div>
+
+<section id="how" style="max-width:1200px;margin:0 auto;padding:104px 24px 64px">
+<h2 style="font-family:'Young Serif',serif;font-weight:400;font-size:clamp(36px,5vw,56px);margin:0 0 56px;max-width:700px;line-height:1.05">Three moves. No excuses.</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:48px;position:relative">
+<div><div style="width:72px;height:72px;border-radius:50%;background:#2B3BFF;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Young Serif',serif;font-size:32px">1</div><h3 style="font-size:24px;margin:20px 0 8px">Make the oath</h3><p style="margin:0;color:#4B5080">State a goal that can be checked online, a deadline, a stake and who gets it if you slip.</p></div>
+<div><div style="width:72px;height:72px;border-radius:50%;background:{{accent}};color:#0F1235;display:flex;align-items:center;justify-content:center;font-family:'Young Serif',serif;font-size:32px">2</div><h3 style="font-size:24px;margin:20px 0 8px">Do the thing</h3><p style="margin:0;color:#4B5080">Post your public proof as you go: a repo, a page, a published link. Check in whenever you like.</p></div>
+<div><div style="width:72px;height:72px;border-radius:50%;background:#0F1235;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Young Serif',serif;font-size:32px">3</div><h3 style="font-size:24px;margin:20px 0 8px">Validators decide</h3><p style="margin:0;color:#4B5080">At the deadline they read your proof. Kept means a full refund. Broken means your stake is paid out.</p></div>
+</div>
+</section>
+
+<section id="wall" style="max-width:1200px;margin:0 auto;padding:64px 24px 112px">
+<h2 style="font-family:'Young Serif',serif;font-weight:400;font-size:clamp(36px,5vw,56px);margin:0 0 12px;line-height:1.05">The oath wall</h2>
+<p style="margin:0 0 48px;color:#4B5080">Every oath is public. Sample cards shown.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px">
+<div style="background:{{accent}};border-radius:20px;padding:26px;transform:rotate(-2deg)"><span style="font-family:'DM Mono',monospace;font-size:12px;background:#0F1235;color:#fff;padding:4px 10px;border-radius:999px">KEPT</span><p style="font-family:'Young Serif',serif;font-size:24px;line-height:1.2;margin:18px 0 10px">[GOAL ONE]</p><div style="font-size:14px;color:#3A3B1E">Stake [AMOUNT] · returned</div></div>
+<div style="background:#fff;border:2px solid #0F1235;border-radius:20px;padding:26px;transform:rotate(1.5deg)"><span style="font-family:'DM Mono',monospace;font-size:12px;background:#DADCFF;padding:4px 10px;border-radius:999px">IN PROGRESS</span><p style="font-family:'Young Serif',serif;font-size:24px;line-height:1.2;margin:18px 0 12px">[GOAL TWO]</p><div style="display:flex;gap:6px;margin-bottom:10px"><span style="width:16px;height:16px;border-radius:50%;background:#2B3BFF"></span><span style="width:16px;height:16px;border-radius:50%;background:#2B3BFF"></span><span style="width:16px;height:16px;border-radius:50%;background:#2B3BFF"></span><span style="width:16px;height:16px;border-radius:50%;border:2px solid #2B3BFF;box-sizing:border-box"></span><span style="width:16px;height:16px;border-radius:50%;border:2px solid #2B3BFF;box-sizing:border-box"></span></div><div style="font-size:14px;color:#4B5080">Stake [AMOUNT] · [N] days left</div></div>
+<div style="background:#DADCFF;border-radius:20px;padding:26px;transform:rotate(-1deg)"><span style="font-family:'DM Mono',monospace;font-size:12px;background:#2B3BFF;color:#fff;padding:4px 10px;border-radius:999px">IN PROGRESS</span><p style="font-family:'Young Serif',serif;font-size:24px;line-height:1.2;margin:18px 0 10px">[GOAL THREE]</p><div style="font-size:14px;color:#3A3F78">Stake [AMOUNT] · goes to [RECIPIENT] if missed</div></div>
+<div style="background:#FFC8DC;border-radius:20px;padding:26px;transform:rotate(2deg)"><span style="font-family:'DM Mono',monospace;font-size:12px;background:#0F1235;color:#FFC8DC;padding:4px 10px;border-radius:999px">BROKEN</span><p style="font-family:'Young Serif',serif;font-size:24px;line-height:1.2;margin:18px 0 10px">[GOAL FOUR]</p><div style="font-size:14px;color:#5A1A33">Stake [AMOUNT] · paid to [RECIPIENT]</div></div>
+</div>
+</section>
+
+<section style="background:#0F1235;color:#fff">
+<div style="max-width:1200px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center">
+<h2 style="font-family:'Young Serif',serif;font-weight:400;font-size:clamp(36px,5vw,60px);line-height:1.05;margin:0">Choose who gets it if you slip.</h2>
+<div>
+<p style="color:#C4C8F0;font-size:18px;margin:0 0 24px">A friend who'll enjoy it. A cause you care about. A rival you'd hate to fund. The stake only stings if you pick well.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap"><span style="border:2px solid {{accent}};color:{{accent}};border-radius:999px;padding:10px 20px;font-weight:700">A friend</span><span style="border:2px solid {{accent}};color:{{accent}};border-radius:999px;padding:10px 20px;font-weight:700">A charity</span><span style="border:2px solid {{accent}};color:{{accent}};border-radius:999px;padding:10px 20px;font-weight:700">A rival</span></div>
+</div></div>
+</section>
+
+<section id="faq" style="max-width:1200px;margin:0 auto;padding:112px 24px;text-align:center">
+<h2 style="font-family:'Young Serif',serif;font-weight:400;font-size:clamp(40px,6vw,76px);line-height:1;margin:0 0 32px">Ready to mean it?</h2>
+<button style="background:#2B3BFF;color:#fff;border:0;border-radius:999px;padding:18px 40px;font-size:18px;font-weight:800;min-height:56px">Make your first oath</button>
+</section>
+
+<footer style="border-top:1px solid #D4D7F5;padding:32px 24px;text-align:center;font-size:14px;color:#4B5080">Oathly prototype on GenLayer StudioNet. No real funds.</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FFE45C"},"$preview":{"width":1360,"height":2000}}'>
+class Component extends DCLogic {
+renderVals() {
+return { accent: this.props.accent ?? '#FFE45C' };
+}
+}
+</script>
+</body>
+</html>
