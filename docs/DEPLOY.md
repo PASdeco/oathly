@@ -26,5 +26,9 @@ The deploy script reads `contracts/oathly_pledge.py`, passes the constructor arg
 
 ## Verification evidence
 
+- Live claim-path E2E on the new contract (`node web/scripts/e2e-claim.mjs`):
+  - create_pledge `0x3e97850c398896c474355e437233eeb9c2ed0e769ed931d091941df7e7d8f2e8` → `get_pledge` ACTIVE, owner `0xd0b8…9f94`
+  - cancel_pledge `0x025ce1da5e6983b0da50de341452c6ee89f67f9ca28050841efb960bb3bb6415` → status CANCELLED, payout `UNCLAIMED refund_cancelled 1000000000000000` (note: payout not emitted at cancellation)
+  - claim_payout `0x4452f25bd9061c1b11b2ba92d62143bd0d6e3590e90b6a67ab1674cee8c08c77` → payout `EMITTED`
 - Verdict/enforcement tests: `tests/test_oathly_pledge.py` — 41 direct-mode tests covering premature verdict rejection for owner/recipient/stranger, validator outcome mismatch, retrieval-failure-never-NOT_MET, repeated-unverifiable → INCONCLUSIVE refund, check-in adjudication, appeals with exact bond and new evidence, claim-only settlement, duplicate settlement/claim guards, insufficient-balance retry, pagination/cursor.
 - Web: `npm run test` (7 passed) + `npm run build` (TypeScript check + 14 routes) in `web/`.
