@@ -2,7 +2,7 @@ import { createClient, createAccount } from "genlayer-js";
 import { studionet } from "genlayer-js/chains";
 import { TransactionStatus } from "genlayer-js/types";
 import type { Hash } from "genlayer-js/types";
-import type { Pledge } from "@/lib/types";
+import type { Pledge, Policy } from "@/lib/types";
 import { MOCK_OATHS } from "@/lib/mock";
 import { CONTRACT_ADDRESS, MOCK_MODE } from "@/lib/config";
 
@@ -55,7 +55,10 @@ export async function fetchWall(status = "ALL", cursor = 0) {
       status === "ALL"
         ? MOCK_OATHS
         : MOCK_OATHS.filter((p) => {
-            if (status === "IN_PROGRESS") return p.status === "ACTIVE";
+            if (status === "IN_PROGRESS")
+              return ["ACTIVE", "UNCLEAR_HOLD", "AWAITING_VERDICT"].includes(
+                p.status
+              );
             return p.status === status;
           });
     return {
@@ -130,6 +133,8 @@ export interface ProfileStats {
   broken: number;
   active: number;
   settled: number;
+  inconclusive: number;
+  claimable: number;
 }
 
 export async function fetchProfile(address: string): Promise<ProfileStats> {
@@ -145,6 +150,10 @@ export async function fetchProfile(address: string): Promise<ProfileStats> {
         ["ACTIVE", "UNCLEAR_HOLD", "AWAITING_VERDICT"].includes(p.status)
       ).length,
       settled: mine.filter((p) => p.settled).length,
+      inconclusive: mine.filter((p) => p.verdict === "INCONCLUSIVE").length,
+      claimable: mine.filter(
+        (p) => p.payout.state === "UNCLAIMED" || p.bond.state === "UNCLAIMED"
+      ).length,
     };
   }
   const client = readClient();
@@ -153,6 +162,31 @@ export async function fetchProfile(address: string): Promise<ProfileStats> {
     functionName: "get_profile",
     args: [address],
   })) as unknown as ProfileStats;
+}
+
+export async function fetchPolicy(): Promise<Policy> {
+  if (isMockMode()) {
+    return {
+      min_stake_wei: 1e15,
+      bond_wei: 1e15,
+      min_lead_seconds: 300,
+      cooling_seconds: 3600,
+      grace_seconds: 172800,
+      appeal_window_seconds: 172800,
+      max_sources: 3,
+      max_extra_sources: 2,
+      max_appeal_evidence: 2,
+      max_checkins: 20,
+      treasury: "0x0000000000000000000000000000000000000000",
+      templates: ["ship_code", "publish_posts", "public_page", "custom"],
+    };
+  }
+  const client = readClient();
+  return (await client.readContract({
+    address: contractAddress(),
+    functionName: "get_policy",
+    args: [],
+  })) as unknown as Policy;
 }
 
 async function waitAccepted(txId: string) {

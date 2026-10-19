@@ -36,8 +36,8 @@ export default function ProfilePage({
       </h1>
       {stats ? (
         <p style={{ color: "var(--ink-muted)" }}>
-          {stats.kept} kept · {stats.broken} broken · {stats.active} active ·{" "}
-          {oaths.length} total
+          {stats.kept} kept · {stats.broken} broken · {stats.inconclusive} inconclusive ·{" "}
+          {stats.active} active · {stats.claimable} claimable · {oaths.length} total
         </p>
       ) : (
         <p aria-live="polite">Loading profile…</p>
