@@ -3,7 +3,7 @@
 **Commitment contracts on GenLayer.** Put money behind a public goal. Prove you did it and you get it back. Miss, and it goes to someone you chose.
 
 - **Live app:** https://gen-oathly.vercel.app
-- **Contract (StudioNet):** [`0xA85005663e9368791Bc3Bdaf311138Eb4558C565`](https://explorer-studio.genlayer.com/address/0xA85005663e9368791Bc3Bdaf311138Eb4558C565)
+- **Contract (StudioNet):** [`0x005507b55792272b14aF9C9A79a0F71136438E47`](https://explorer-studio.genlayer.com/address/0x005507b55792272b14aF9C9A79a0F71136438E47)
 
 ---
 
